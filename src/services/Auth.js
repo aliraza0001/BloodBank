@@ -1,15 +1,13 @@
 import auth from '@react-native-firebase/auth';
+// *** Auth API ***
+export const createUserWithEmailAndPassword = (email, password) =>
+  auth().createUserWithEmailAndPassword(email, password);
 
-class Auth {
-  constructor() {
-    this.auth = auth();
-  }
+export const signInWithEmailAndPassword = (email, password) =>
+  auth().signInWithEmailAndPassword(email, password);
 
-  // *** Auth API ***
-  doCreateUserWithEmailAndPassword = (email, password) =>
-    this.auth.createUserWithEmailAndPassword(email, password);
+export const createUser = () => {};
 
-  doSignInWithEmailAndPassword = (email, password) =>
-    this.auth.signInWithEmailAndPassword(email, password);
-}
-export default Auth;
+export const getUser = () => {};
+
+export const logOut = () => auth().signOut();
